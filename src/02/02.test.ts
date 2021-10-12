@@ -35,17 +35,18 @@ beforeEach(() => {
             },
 
         ],
-        governmentBuildings: [{
-            type: "HOSPITAL",
-            budget: 200000,
-            staffCount: 200,
-            address: {
-                number: 200,
-                street: {
-                    title: "Central Str"
+        governmentBuildings: [
+            {
+                type: "HOSPITAL",
+                budget: 200000,
+                staffCount: 200,
+                address: {
+                    number: 200,
+                    street: {
+                        title: "Central Str"
+                    }
                 }
-            }
-        },
+            },
             {
                 type: "FIRE-STATION",
                 budget: 500000,
