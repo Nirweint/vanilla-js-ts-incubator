@@ -6,6 +6,8 @@ export function multiply(a: number, b: number) {
     return a * b;
 }
 
-export function splitIntoWords(sentense: string) {
-    return sentense.toLowerCase().split(" ");
+export function splitIntoWords(sent: string) {
+    return sent.toLowerCase().split(" ")
+        .filter(w => w !== "" && w !== "-")
+        .map(w => w.replace("!", ""));
 }
