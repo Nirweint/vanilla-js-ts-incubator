@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {addMoneyToBudget} from "./03";
+import {addMoneyToBudget, createMessage, repairHouse, toFireStaff, toHireStaff} from "./03";
 
 let city: CityType;
 
@@ -59,7 +59,7 @@ beforeEach(() => {
                 }
             },
         ],
-        citizensNumber: 100000
+        citizensNumber: 1000000
     }
 })
 
@@ -72,26 +72,23 @@ test("Budget should be changed for HOSPITAL", () => {
 
 // 01. Тесты должны пройти
 test("Budget should be changed for FIRE-STATION", () => {
-    addMoneyToBudget(city.governmentBuildings[0], 100000);
+    addMoneyToBudget(city.governmentBuildings[1], -100000);
 
     expect(city.governmentBuildings[1].budget).toBe(400000);
 });
 
-// 01. создайте в том же файле ещё одну функцию, чтобы тесты прошли
 test("House should be repaired", () => {
     repairHouse(city.houses[1]);
 
     expect(city.houses[1].repaired).toBeTruthy();
 });
 
-// 01. создайте в том же файле ещё одну функцию, чтобы тесты прошли
 test("staff should be decreased", () => {
     toFireStaff(city.governmentBuildings[0], 20);
 
     expect(city.governmentBuildings[0].staffCount).toBe(180);
 });
 
-// 01. создайте в том же файле ещё одну функцию, чтобы тесты прошли
 test("staff should be increased", () => {
     toHireStaff(city.governmentBuildings[0], 20);
     toHireStaff(city.governmentBuildings[1], 100);
